@@ -155,7 +155,7 @@ namespace HTMLQuestPDF.Components
                             break;
                         case "font-family":
                             string font = FontFamilyUtils.FormatFontFamily(styleValue);
-                            if (FontFamilyUtils.IsFontFamilyValid(font))
+                            if (!string.IsNullOrEmpty(font))
                             {
                                 textStyle = textStyle.FontFamily(font);
                             }
