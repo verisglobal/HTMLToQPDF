@@ -127,7 +127,7 @@ namespace HTMLQuestPDF.Components
         {
             foreach (var attr in element.Attributes)
             {
-                if(attr.Name == "style")
+                if (attr.Name == "style")
                 {
                     style = ParseStyleString(attr.Value, style);
                 }
@@ -154,8 +154,8 @@ namespace HTMLQuestPDF.Components
                             }
                             break;
                         case "font-family":
-                            string font = FontFamilyUtils.formatFontFamily(styleValue);
-                            if (FontFamilyUtils.isFontFamilyValid(font))
+                            string font = FontFamilyUtils.FormatFontFamily(styleValue);
+                            if (FontFamilyUtils.IsFontFamilyValid(font))
                             {
                                 textStyle = textStyle.FontFamily(font);
                             }

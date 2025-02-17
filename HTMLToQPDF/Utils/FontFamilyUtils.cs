@@ -20,7 +20,7 @@ namespace HTMLToQPDF.Utils
             "Georgia"
         };
 
-        public static string formatFontFamily(string fontFamily)
+        public static string FormatFontFamily(string fontFamily)
         {
             var font = fontFamily;
             int comma = font.IndexOf(',');
@@ -34,7 +34,7 @@ namespace HTMLToQPDF.Utils
             return font;
         }
 
-        public static bool isFontFamilyValid(string fontFamily)
+        public static bool IsFontFamilyValid(string fontFamily)
         {
             return availableFonts.Contains(fontFamily);
         }
