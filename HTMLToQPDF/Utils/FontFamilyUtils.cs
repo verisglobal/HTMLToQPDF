@@ -5,21 +5,6 @@ namespace HTMLToQPDF.Utils
 {
     internal static class FontFamilyUtils
     {
-        private static readonly HashSet<string> availableFonts = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
-        {
-            "Arial",
-            "Brush Script MT",
-            "Courier New",
-            "Garamond",
-            "Montserrat",
-            "Helvetica",
-            "Tahoma",
-            "Trebuchet MS",
-            "Times New Roman",
-            "Verdana",
-            "Georgia"
-        };
-
         public static string FormatFontFamily(string fontFamily)
         {
             var font = fontFamily;
@@ -32,11 +17,6 @@ namespace HTMLToQPDF.Utils
             font = font.Replace("\"", string.Empty);
 
             return font;
-        }
-
-        public static bool IsFontFamilyValid(string fontFamily)
-        {
-            return availableFonts.Contains(fontFamily);
         }
     }
 }
