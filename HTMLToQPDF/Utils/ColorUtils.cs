@@ -37,7 +37,7 @@ namespace HTMLToQPDF.Utils
 
         private static bool CheckHexFormat(string color)
         {
-            var pattern = @"^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$";
+            var pattern = @"^#([A-Fa-f0-9]{8}|[A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$";
 
             return Regex.IsMatch(color, pattern);
         }
@@ -52,8 +52,9 @@ namespace HTMLToQPDF.Utils
             int b = int.Parse(parts[2].Trim());
 
             double a = double.Parse(parts[3].Trim(), CultureInfo.InvariantCulture);
+            int alpha = (int)(a * 255);
 
-            string hex = $"#{r:X2}{g:X2}{b:X2}";
+            string hex = $"#{alpha:X2}{r:X2}{g:X2}{b:X2}";
 
             return hex;
         }
